@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toastL"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal" >
+
+    <RelativeLayout
+        android:layout_width="250dip"
+        android:layout_height="117dip"
+        android:background="@drawable/jifen" >
+
+        <LinearLayout
+            android:layout_width="76dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="22dp"
+            android:layout_marginRight="22dp"
+            android:gravity="center_horizontal" >
+
+            <TextView
+                android:id="@+id/toast_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+555"
+                android:textColor="#258a01"
+                android:textSize="21sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="积分"
+                android:textColor="#258a01"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="30dip"
+        android:layout_height="1dip" />
+
+</LinearLayout>

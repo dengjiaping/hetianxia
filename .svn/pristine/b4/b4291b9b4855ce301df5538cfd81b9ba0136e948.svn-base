@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/search_title_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp" >
+
+        <!--
+        <Button
+            android:id="@+id/nearbysearchshop_saobtn"
+            android:layout_width="61dip"
+            android:layout_height="fill_parent"
+            android:background="@drawable/btn"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:scaleType="fitXY"
+            android:text="扫一扫"
+            android:textColor="#ffffff" />
+        -->
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="连锁店"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#fff" />
+        <!--
+        <Button
+            android:id="@+id/nearbysearchshop_addbtn"
+            android:layout_width="61dip"
+            android:layout_height="fill_parent"
+            android:background="@drawable/btn"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:scaleType="fitXY"
+            android:text="添加"
+            android:textColor="#ffffff" />
+        -->
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/nearbysearchshop_lv"
+        android:layout_width="fill_parent"
+        android:divider="@null"
+        android:layout_height="fill_parent" >
+    </ListView>
+
+</LinearLayout>

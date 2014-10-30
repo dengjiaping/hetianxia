@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:paddingBottom="3dp"
+    android:paddingLeft="6dp"
+    android:paddingRight="6dp"
+    android:paddingTop="3dp" >
+
+    <LinearLayout
+        android:id="@+id/bg"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:background="@drawable/news_item_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="8dip" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/poiname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text=""
+                android:textColor="#f0411a"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/poiname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text=""
+                android:textColor="#f0411a"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/poidistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginTop="2dip"
+                android:drawableLeft="@drawable/di"
+                android:paddingLeft="5dip"
+                android:text=""
+                android:textColor="#54AA05"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <RatingBar
+                android:id="@+id/poirating"
+                style="@style/roomRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="15dip" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dip"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/poiprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dip"
+                android:text=""
+                android:textColor="#f6ab00"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/context"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/ph"
+                android:focusable="false"
+                android:textColor="#fff"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/poitag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#666"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/bupoimap"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/daoh1"
+                android:focusable="false"
+                android:text="步行导航"
+                android:textColor="#fff"
+                android:textSize="14dp" />
+
+            <Button
+                android:id="@+id/busmap"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="4dip"
+                android:layout_weight="0.25"
+                android:background="@drawable/daoh2"
+                android:focusable="false"
+                android:text="公交导航"
+                android:textColor="#fff"
+                android:textSize="14dp" />
+
+            <Button
+                android:id="@+id/poimap"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="4dip"
+                android:layout_weight="0.25"
+                android:background="@drawable/daoh3"
+                android:focusable="false"
+                android:text="车载导航"
+                android:textColor="#fff"
+                android:textSize="14dp" />
+
+            <Button
+                android:id="@+id/infomap"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="4dip"
+                android:layout_weight="0.25"
+                android:background="@drawable/daoh4"
+                android:focusable="false"
+                android:text="商家详情"
+                android:textColor="#fff"
+                android:textSize="14dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

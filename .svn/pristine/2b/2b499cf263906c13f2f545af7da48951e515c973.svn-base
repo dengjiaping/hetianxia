@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/search_title_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp" >
+
+        <Button
+            android:id="@+id/nearbysearchguan_saobtn"
+            android:layout_width="61dip"
+            android:layout_height="fill_parent"
+            android:background="@drawable/btn"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:scaleType="fitXY"
+            android:text="扫一扫"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="已关注"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/nearbysearchguan_addbtn"
+            android:layout_width="61dip"
+            android:layout_height="fill_parent"
+            android:background="@drawable/btn"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:scaleType="fitXY"
+            android:text="添加"
+            android:textColor="#ffffff" />
+        <!-- <Button -->
+        <!-- android:layout_width="65dip" -->
+        <!-- android:layout_height="fill_parent" -->
+        <!-- android:layout_marginBottom="5dp" -->
+        <!-- android:layout_marginTop="5dp" -->
+        <!-- android:background="@drawable/guanz_03" -->
+        <!-- android:gravity="center_vertical|right" -->
+        <!-- android:paddingRight="10dip" -->
+        <!-- android:scaleType="fitXY" -->
+        <!-- android:text="搜索" -->
+        <!-- android:textColor="#ffffff" /> -->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.7"
+            android:background="@drawable/guanz_55"
+            android:cacheColorHint="#0000"
+            android:orientation="vertical"
+            android:scrollbars="none" >
+        </ListView>
+
+        <ListView
+            android:id="@+id/listView2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.3"
+            android:orientation="vertical" >
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

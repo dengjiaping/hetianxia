@@ -1,0 +1,122 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DriveRouteDemoActivity" >
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/bmapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dip" 
+        android:clickable="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/man_logo" />
+
+    <RelativeLayout
+        android:id="@+id/bus_rlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0.9"
+        android:background="#000000" >
+
+        <TextView
+            android:id="@+id/textView_tip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:layout_marginTop="5dip"
+            android:padding="20dip"
+            android:text="导航提示信息"
+            android:textColor="#ffffff"
+            android:textSize="17sp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button_change2D3D"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/bus_rlayout"
+        android:layout_marginRight="3dip"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/daohbg_2d"
+        android:padding="8dp"
+        android:text="2D" />
+
+    <Button
+        android:id="@+id/button_to_myLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/button_change2D3D"
+        android:layout_marginRight="3dip"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/daohbg_dingwei"
+        android:padding="8dp" />
+
+    <Button
+        android:id="@+id/button_location_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/button_to_myLocation"
+        android:layout_marginRight="3dip"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/daoh_gens"
+        android:padding="8dp" />
+
+    <Button
+        android:id="@+id/button_location_lukuang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/button_location_mode"
+        android:layout_marginRight="3dip"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/daoh_lukuang"
+        android:padding="8dp" />
+
+    <ImageView
+        android:id="@+id/bus_img_bili"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="45dip"
+        android:layout_marginLeft="15dip"
+        android:background="@drawable/daoh_bili" />
+
+    <TextView
+        android:id="@+id/bus_text_bili"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bus_img_bili"
+        android:layout_marginLeft="17dip"
+        android:text="20米"
+        android:textColor="#000000" />
+ 
+    <Button
+        android:id="@+id/button_location_jian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bus_text_bili"
+        android:layout_alignLeft="@+id/button_location_lukuang"
+        android:background="@drawable/daoh_jian"
+        android:padding="8dp" />
+
+    <Button
+        android:id="@+id/button_location_jia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_location_jian"
+        android:layout_alignLeft="@+id/button_location_jian"
+        android:background="@drawable/daoh_jia"
+        android:padding="8dp" />
+
+</RelativeLayout>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toplayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="clip_horizontal"
+    android:background="#eee"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="@drawable/search_title_bg"
+        android:gravity="center"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip" >
+
+        <TextView
+            android:id="@+id/toptv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="领取免费保险"
+            android:textColor="#FFFFFF"
+            android:textSize="18dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="25dip"
+        android:background="@drawable/longin_bg"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+			android:focusableInTouchMode="true"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="真实姓名：   "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#444"
+                android:textSize="16dip" />
+
+            <EditText
+                android:id="@+id/username_ed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="请输入您的真实姓名"
+                android:singleLine="true"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/xu" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="7dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="身份证号：   "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#444"
+                android:textSize="16dip" />
+
+            <EditText
+                android:id="@+id/Cid_ed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="请输入您的身份证号"
+                android:password="true"
+                android:singleLine="true"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/xu" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="7dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="手机号码：   "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#444"
+                android:textSize="16dip" />
+
+            <EditText
+                android:id="@+id/phone_ed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="请输入您的手机号码"
+                android:password="true"
+                android:singleLine="true"
+                android:textSize="15dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="30dip"
+        android:background="#eee"
+        android:orientation="vertical"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip" >
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:background="@drawable/btn_bg"
+            android:text="领取保险 "
+            android:textColor="#FFFFFF"
+            android:textSize="17sp" />
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dip"
+            android:layout_marginTop="25dip" 
+            android:background="@drawable/textview_yuan"
+            >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dip"
+                android:paddingBottom="10dip"
+                android:paddingLeft="15dip"
+                android:paddingRight="10dip"
+                android:background="#f5f5f5"
+                android:lineSpacingExtra="3dp"
+                android:text="1.无需支付任何费用，为您送上公共交通意外伤害保险。自动献爱，够意思吧！
+\n\n2.若您在18---55周岁之间，可免费获得如下公交意外保障：汽车或公司班车保额 10000元； 列车、轮
+船保额20000元； 民航班机保额100000元。 
+\n\n3.保障时间：生效时间以收到保险单号的短信通知为准！，为期一个月。
+\n\n4.公共交通工具：是指领有营业执照、以客运为目的且以收费方式合法载客的名航班机、列车（包括地
+铁、轻轨列车以及其他客运列车）、汽车（包括公共汽车、 电车、出租汽车）、轮船（包括渡轮）
+\n\n5.一般交通工具：1、不属于公共交通工具所定义的交通工具；2、以动力装置驱动或者牵引，能合法上
+道路行驶的四轮及四轮以上轮式车辆；3、主要用于载运乘客及随身行李或临时物品；4、不包括一下车
+辆：货车、客运两用车、轨道交通车辆、警车、救护车、消防车、工程抢险车、工程作业车、公路监督
+检查专用车、公路养护车、清障车、救援车、洒水车、清扫车、拖拉机、公司（单位）上下班班车以及
+农用车辆
+ \n\n6.只限本人，只限手机号所在地为河南省省内城市，其他省会城市、直辖市以及计划单列市；"
+                android:textColor="#E3170D"
+                android:textSize="14sp" />
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

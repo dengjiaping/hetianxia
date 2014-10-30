@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:gravity="center"
+    android:padding="8dp" >
+
+    <TextView
+        android:id="@+id/more_shops"
+        android:layout_width="222dip"
+        android:layout_height="45dip"
+        android:background="@drawable/more_shops"
+        android:textColor="#555"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:text="查看更多商家报价"  />
+
+</LinearLayout>

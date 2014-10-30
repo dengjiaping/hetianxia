@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="@drawable/search_title_bg" >
+
+        <Button
+            android:id="@+id/home_refresh"
+            android:layout_width="60dip"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="5dip"
+            android:background="@drawable/btn"
+            android:text="返回 "
+            android:textColor="#fff"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/home_top_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:layout_weight="1"
+            android:background="@drawable/title_bar_center_button_bg"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/home_top_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dip"
+                android:text="公交路线方案"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/home_menu"
+            android:layout_width="40dip"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="2dip"
+            android:layout_marginRight="5dp"
+            android:background="@null"
+            android:textColor="#fff"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".BusPlaneSelectionActivity" >
+
+        <TextView
+            android:id="@+id/textView_taxiPrice"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bus1"
+            android:drawableLeft="@drawable/daoh_car"
+            android:gravity="left"
+            android:padding="15dip"
+            android:text="    打车约需要9元"
+            android:lineSpacingExtra="4dip"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textVi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_taxiPrice"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:drawableLeft="@drawable/daoh_bus"
+            android:padding="10dip"
+            android:text="  下面是为您精选的公交出行方案"
+            android:textSize="16sp" />
+        
+        <ListView
+            android:id="@+id/listView_bus_selection"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dip"
+            android:background="@drawable/bus2"
+            android:layout_height="wrap_content"
+            android:divider="#b6daa1"
+            android:dividerHeight="1px"
+            android:layout_below="@+id/textVi" 
+            android:fadingEdge="none"
+            android:cacheColorHint="#00000000"
+            android:listSelector="#00000000"  
+            >
+        </ListView>
+        
+    </RelativeLayout>
+
+</LinearLayout>

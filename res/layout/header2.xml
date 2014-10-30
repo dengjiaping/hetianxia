@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/header" >
+
+    <View
+        android:layout_width="1dip"
+        android:layout_height="fill_parent"
+        android:background="#222" />
+
+    <View
+        android:layout_width="0.5dip"
+        android:layout_height="fill_parent"
+        android:background="#aaa" />
+
+    <Button
+        android:id="@+id/btn_title_popmenu1"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.33"
+        android:background="@null"
+        android:text="商家简介"
+        android:textColor="#ddd"
+        android:textSize="16sp"
+        android:gravity="center"/>
+
+    <View
+        android:layout_width="1dip"
+        android:layout_height="fill_parent"
+        android:background="#222" />
+
+    <View
+        android:layout_width="0.5dip"
+        android:layout_height="fill_parent"
+        android:background="#aaa" />
+
+    <Button
+        android:id="@+id/btn_title_popmenu2"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.33"
+        android:background="@null"
+        android:textColor="#ddd"
+        android:textSize="16sp"
+        android:text="资讯促销"
+        android:gravity="center" />
+
+    <View
+        android:layout_width="1dip"
+        android:layout_height="fill_parent"
+        android:background="#222" />
+
+    <View
+        android:layout_width="0.5dip"
+        android:layout_height="fill_parent"
+        android:background="#aaa" />
+
+    <Button
+        android:id="@+id/btn_title_popmenu3"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.33"
+        android:textColor="#ddd"
+        android:textSize="16sp"
+        android:text=" 更多 >>"
+        android:background="@null"
+        android:gravity="center" />
+
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#eee"
+    android:orientation="vertical"
+    android:paddingBottom="3dip"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="3dip" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="horizontal"
+        android:paddingBottom="10dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="10dip" >
+
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="60dip"
+            android:layout_height="60dip"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/hetianxia" >
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dip"
+                android:text="我的商品1"
+                android:textColor="#555"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/pec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dip"
+                android:layout_marginTop="6dip"
+                android:text="我的商品1"
+                android:textColor="#f38"
+                android:textSize="14sp" />
+        </LinearLayout>
+        
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="10dip"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal"
+            android:src="@drawable/jt_you" >
+        </ImageView>
+        
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="30dip"
+        android:background="#97D633"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="总共"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/shops_count"
+            style="@style/theme_fontcolor_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0家" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商家报价"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="#555" />
+
+    <ListView
+        android:id="@+id/shops_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:divider="#888"
+        android:dividerHeight="0.5dip"
+        android:fadeScrollbars="true"
+        android:fadingEdge="none"
+        android:scrollingCache="false" />
+
+</LinearLayout>

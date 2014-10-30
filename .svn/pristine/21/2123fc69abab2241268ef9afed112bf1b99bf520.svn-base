@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_sendtime"
+            style="@style/chat_text_date_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/chat_bg"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingBottom="8dip"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="#111"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/iv_userhead"
+            android:layout_width="fill_parent"
+            android:layout_height="150dip"
+            android:scaleType="fitXY"
+            android:src="@drawable/hetianxia" />
+
+        <TextView
+            android:id="@+id/tv_chatcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dip"
+            android:textColor="#999"
+            android:ellipsize="end"
+            android:textSize="13sp" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_marginTop="4dip"
+            android:background="#EEE"
+            android:layout_marginBottom="4dip" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/mall_index_function_btn_normal"
+            android:text="查看全文"
+            android:textColor="#999"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</LinearLayout>

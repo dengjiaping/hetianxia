@@ -1,0 +1,910 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#F6EEDE"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/search_title_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp" >
+
+        <Button
+            android:id="@+id/nearbysearch_goback"
+            android:layout_width="61dip"
+            android:layout_height="fill_parent"
+            android:background="@drawable/btn"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:scaleType="fitXY"
+            android:text="城市"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="搜索附近   "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/search_range_btn"
+            android:layout_width="61dip"
+            android:layout_height="fill_parent"
+            android:background="@drawable/btn"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:scaleType="fitXY"
+            android:text="全城"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbarTrackVertical="@null" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:paddingBottom="8dip" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dip"
+                android:layout_marginLeft="11dip"
+                android:layout_marginRight="9dip"
+                android:layout_marginTop="9dip"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/tiaomacha_03"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/poi_search_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:drawableLeft="@drawable/main_search_left"
+                        android:hint="请输入搜索名称"
+                        android:singleLine="true"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/main_speak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:paddingLeft="11dip"
+                        android:paddingRight="6dip"
+                        android:src="@drawable/voiceicon" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/poi_search_bt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/tiaomacha_04" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dip"
+                android:layout_marginRight="3dip"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/foodimg"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dip"
+                    android:background="@drawable/daohang_03" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="1dip"
+                    android:background="#CCE95E3E"
+                    android:orientation="vertical"
+                    android:padding="8dip" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="15dip" >
+
+                        <Button
+                            android:id="@+id/kfc_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="肯德基"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/zizhucan_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="自助餐"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/dekeshi_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="德克士"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/mcdonald_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="麦当劳"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="15dip" >
+
+                        <Button
+                            android:id="@+id/xican_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="西餐"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/zhongcan_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="中餐"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/huoguo_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="火锅"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/chuancai_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="川菜"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/xiaochikuaican_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="小吃"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dip"
+                android:layout_marginRight="3dip"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/hotelimg"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dip"
+                    android:background="@drawable/daohang_06" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="1dip"
+                    android:background="#CC6AB526"
+                    android:orientation="vertical"
+                    android:padding="8dip" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="15dip" >
+
+                        <Button
+                            android:id="@+id/kuaijiejiudian_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="快捷酒店"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/bianlidian_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="农家院"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/xingjijiudian_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="星级酒店"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/dujiacun_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="度假村"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="15dip" >
+
+                        <Button
+                            android:id="@+id/lvguan_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="旅馆"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/qingnianlvse_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="旅社"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/zhaodaisuo_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="招待所"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/liaoyangyuan_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="疗养院"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/gongyu_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="公寓"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dip"
+                android:layout_marginRight="3dip"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/entertailmentimg"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dip"
+                    android:background="@drawable/daohang_08" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="1dip"
+                    android:background="#CCEBC700"
+                    android:orientation="vertical"
+                    android:padding="8dip" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="15dip" >
+
+                        <Button
+                            android:id="@+id/dianyinyuan_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="电影院"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/kafeiting_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="咖啡厅"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/xiyuanmo_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="洗浴按摩"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/meirong_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="美容院"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="15dip" >
+
+                        <Button
+                            android:id="@+id/jiuba_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="酒吧"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/ktv_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="KTV"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/wangba_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="网吧"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/gongyuan_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="公园"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/lifadian_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="理发店"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dip"
+                android:layout_marginRight="3dip"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/lifeimg"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dip"
+                    android:background="@drawable/daohang_10" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="1dip"
+                    android:layout_weight="0.3"
+                    android:background="#CCF1781F"
+                    android:orientation="vertical"
+                    android:padding="8dip" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="15dip" >
+
+                        <Button
+                            android:id="@+id/chaoshi_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="超市"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/yaodian_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="药店"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/yiyuan_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="医院"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/xuexiao_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="学校"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/yinhang_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="银行"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="15dip" >
+
+                        <Button
+                            android:id="@+id/fuzhuangdian_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="服装店"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/jingju_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="警局"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/jiazheng_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="家政"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/cesuo_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="厕所"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/atm_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="ATM"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dip"
+                android:layout_marginRight="3dip"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/trafficimg"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dip"
+                    android:background="@drawable/daohang_12" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="1dip"
+                    android:background="#CCEE3C57"
+                    android:orientation="vertical"
+                    android:padding="8dip" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="15dip" >
+
+                        <Button
+                            android:id="@+id/gongjiaozhan_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="公交站"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/jiayouzhan_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="加油站"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/qichexiuli_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="汽车修理"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/chepiaodaishou_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="车票代售"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="15dip" >
+
+                        <Button
+                            android:id="@+id/tingchechang_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="停车场"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/jichang_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="机场"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/qichezhan_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="汽车站"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/sdian_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="4S店"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/huochezhan_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.25"
+                            android:background="@null"
+                            android:text="火车站"
+                            android:textColor="#fff"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dip"
+                    android:layout_marginRight="3dip"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/qita"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dip"
+                        android:background="@drawable/daohang_13" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="1dip"
+                        android:background="#106fcc"
+                        android:orientation="vertical"
+                        android:padding="8dip" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="15dip" >
+
+                            <Button
+                                android:id="@+id/hunsha_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="0.25"
+                                android:background="@null"
+                                android:text="婚纱摄影"
+                                android:textColor="#fff"
+                                android:textSize="13sp" />
+
+                            <Button
+                                android:id="@+id/zhubao_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="0.25"
+                                android:background="@null"
+                                android:text="珠宝"
+                                android:textColor="#fff"
+                                android:textSize="13sp" />
+
+                            <Button
+                                android:id="@+id/yishupin_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="0.25"
+                                android:background="@null"
+                                android:text="艺术品"
+                                android:textColor="#fff"
+                                android:textSize="13sp" />
+
+                            <Button
+                                android:id="@+id/guanggaoyinshua_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="0.25"
+                                android:background="@null"
+                                android:text="广告印刷"
+                                android:textColor="#fff"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="15dip" >
+
+                            <Button
+                                android:id="@+id/lvyou_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="0.25"
+                                android:background="@null"
+                                android:text="旅游"
+                                android:textColor="#fff"
+                                android:textSize="13sp" />
+
+                            <Button
+                                android:id="@+id/fangchan_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="0.25"
+                                android:background="@null"
+                                android:text="房产"
+                                android:textColor="#fff"
+                                android:textSize="13sp" />
+
+                            <Button
+                                android:id="@+id/jinrong_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="0.25"
+                                android:background="@null"
+                                android:text="金融"
+                                android:textColor="#fff"
+                                android:textSize="13sp" />
+
+                            <Button
+                                android:id="@+id/zhongjie_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="0.25"
+                                android:background="@null"
+                                android:text="中介公司"
+                                android:textColor="#fff"
+                                android:textSize="13sp" />
+
+                            <Button
+                                android:id="@+id/guwancheng_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="0.25"
+                                android:background="@null"
+                                android:text="古玩城"
+                                android:textColor="#fff"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

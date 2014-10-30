@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/layout_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dip"
+        android:background="@drawable/brand_bg1"
+        android:orientation="horizontal"
+        android:padding="15dip" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:layout_marginLeft="8dip"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="57dip"
+                android:layout_height="57dip"
+                android:background="#c5c5c5"
+                android:gravity="center" >
+
+                <LinearLayout
+                    android:layout_width="55dip"
+                    android:layout_height="55dip"
+                    android:background="#f8f8f8"
+                    android:gravity="center" >
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="53dip"
+                        android:layout_height="53dip"
+                        android:src="@drawable/hetianxia" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="10dip"
+            android:layout_marginBottom="10dip"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingBottom="5dip"
+                android:text="sdfsfsdf"
+                android:textColor="#fff"
+                android:textSize="19dip" />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="sdfsfsdf"
+                android:textColor="#fff"
+                android:textSize="15dip"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,217 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DriveRouteDemoActivity" >
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/bmapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dip"
+        android:apiKey="FWQbpnznxNL5nSi3KxhjFDp1"
+        android:clickable="true" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/man_logo" />
+
+    <RelativeLayout
+        android:id="@+id/walk_rlayoutz"
+        android:layout_width="fill_parent"
+        android:layout_height="130dip" >
+
+        <RelativeLayout
+            android:id="@+id/walk_rlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="130dip"
+            android:background="@drawable/daohbg1" >
+
+            <ImageView
+                android:id="@+id/walk_img_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dip"
+                android:background="@drawable/daohimg_tip" />
+
+            <TextView
+                android:id="@+id/textView_distance_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/walk_img_tip"
+                android:layout_margin="8dp"
+                android:background="@drawable/daohbg_juli"
+                android:gravity="center"
+                android:text="0m"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/walk_rlayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/walk_rlayout"
+            android:background="@drawable/daohbg2" >
+
+            <TextView
+                android:id="@+id/textView_tip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="导航提示信息"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/walk_rlayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/walk_rlayout1"
+            android:layout_toRightOf="@+id/walk_rlayout" >
+
+            <LinearLayout
+                android:id="@+id/drive_img_gps"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dip"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/textView_distance_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/daohbb1"
+                    android:drawableLeft="@drawable/daohbi1"
+                    android:gravity="center"
+                    android:paddingLeft="6dip"
+                    android:text="0Km"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/textView_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/daohbb2"
+                    android:drawableLeft="@drawable/daohbi2"
+                    android:gravity="center"
+                    android:paddingLeft="3dip"
+                    android:text="0分钟"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/textView_gps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/daohbb3"
+                    android:drawableLeft="@drawable/daohbi3"
+                    android:gravity="center"
+                    android:paddingLeft="3dip"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button_change2D3D"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/walk_rlayoutz"
+        android:layout_marginRight="3dip"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/daohbg_2d"
+        android:padding="8dp"
+        android:text="2D" />
+
+    <Button
+        android:id="@+id/button_to_myLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/button_change2D3D"
+        android:layout_marginRight="3dip"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/daohbg_dingwei"
+        android:padding="8dp" />
+
+    <Button
+        android:id="@+id/button_location_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/button_to_myLocation"
+        android:layout_marginRight="3dip"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/daoh_gens"
+        android:padding="8dp" />
+
+    <Button
+        android:id="@+id/button_location_lukuang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/button_location_mode"
+        android:layout_marginRight="3dip"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/daoh_lukuang"
+        android:padding="8dp" />
+
+    <ImageView
+        android:id="@+id/walk_img_bili"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="45dip"
+        android:layout_marginLeft="15dip"
+        android:background="@drawable/daoh_bili" />
+
+    <Button
+        android:id="@+id/button_location_jian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/walk_text_bili"
+        android:layout_alignLeft="@+id/button_location_lukuang"
+        android:background="@drawable/daoh_jian"
+        android:padding="8dp" />
+
+    <Button
+        android:id="@+id/button_location_jia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_location_jian"
+        android:layout_alignLeft="@+id/button_location_jian"
+        android:background="@drawable/daoh_jia"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/walk_text_bili"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView1"
+        android:layout_alignRight="@+id/walk_img_bili"
+        android:layout_marginBottom="13dp"
+        android:text="20米"
+        android:textColor="#000000" />
+
+</RelativeLayout>

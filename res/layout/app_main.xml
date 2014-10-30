@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="@drawable/search_title_bg" >
+
+        <TextView
+            android:id="@+id/toptv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="生活应用"
+            android:textColor="#FFFFFF"
+            android:textSize="18dip" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:visibility="gone"
+            android:layout_alignParentTop="true"
+            android:text="管理" />
+
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/mainGrid"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_horizontal"
+        android:columnWidth="100dip"
+        android:fadeScrollbars="true"
+        android:padding="10dip"
+        android:background="#fff"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="true"
+        android:horizontalSpacing="10dp"
+        android:numColumns="4"
+        android:scrollbarSize="0dip"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp" >
+    </GridView>
+
+</LinearLayout>

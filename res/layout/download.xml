@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#F6EEDE"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/search_title_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp" >
+
+        <Button
+            android:id="@+id/download_back_btn"
+            android:layout_width="61dip"
+            android:layout_height="fill_parent"
+            android:background="@drawable/btn"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:scaleType="fitXY"
+            android:text="返回"
+            android:textColor="#ffffff" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="合天下客户端"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#fff" />
+    </RelativeLayout>
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical"
+	    android:gravity="center_vertical"
+	    >
+	    <ImageView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/download_yt"
+	        android:layout_gravity="center_horizontal"
+	        android:layout_marginRight="20dip"
+	        />
+	    <ImageView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/download_tv"
+	        android:layout_gravity="center_horizontal"
+	        android:layout_marginTop="20dip"
+	        />
+	    <FrameLayout 
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="70dip"
+	        android:layout_marginRight="70dip"
+	        android:layout_marginTop="30dip"
+	        >
+	    <Button 
+	        android:id="@+id/download_btn"
+	        android:layout_width="fill_parent"
+	        android:layout_height="60dip"
+	        android:background="@drawable/btn_bg"
+	        android:text="开启导航"
+	        android:textColor="#ffffff"
+	        android:textSize="25dip"
+	        />
+	    <Button 
+	        android:id="@+id/downloadz_btn"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/download_btnz"
+	        android:visibility="gone"
+	        />
+	    </FrameLayout>
+	</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="30dip"
+        android:background="#97D633"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="总共"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/receive_count"
+            style="@style/theme_fontcolor_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0条" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="评论"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.8dip"
+        android:background="#333" />
+
+    <ListView
+        android:id="@+id/receive_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:divider="#333"
+        android:dividerHeight="0.5dip"
+        android:fadeScrollbars="true"
+        android:fadingEdge="none"
+        android:scrollingCache="false" />
+
+</LinearLayout>

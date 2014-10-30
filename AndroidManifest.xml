@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hetianxia.activity"
+    android:installLocation="internalOnly"
+    android:versionCode="310"
+    android:versionName="3.10" >
+ 
+    <!-- com.hetianxia.activity -->
+    <uses-sdk android:minSdkVersion="7" />
+
+    <supports-screens android:anyDensity="true" />
+	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <!-- 屏幕常亮 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- SDCard操作 -->     
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 网络 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 百度统计 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 其他 -->
+    <uses-permission android:name="android.permission.MOUT_UMONT_FILESYSTEM" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 相机 -->
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!-- 其他 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCES_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <!-- SDK1.5需要android.permission.GET_TASKS权限判断本程序是否为当前运行的应用? -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <!-- 来电消音 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    
+    <permission android:name="android.permission.BAIDU_LOCATION_SERVICE" >
+    </permission>
+
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.camera.flash" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature android:name="android.hardware.screen.landscape" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <application
+        android:name="com.htx.action.BMapApiDemoApp"
+        android:debuggable="true"
+        android:icon="@drawable/iii"
+        android:label="@string/app_name"
+        android:theme="@style/AppsTheme" >
+
+        <!-- 百度统计 APP KEY -->
+        <meta-data
+            android:name="BaiduMobAd_STAT_ID"
+            android:value="3d425a14d8" />
+        <meta-data
+            android:name="BaiduMobAd_CHANNEL"
+            android:value="htx" />
+        <meta-data
+            android:name="BaiduMobAd_EXCEPTION_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="BaiduMobAd_SEND_STRATEGY"
+            android:value="APP_START" />
+        <meta-data
+            android:name="BaiduMobAd_ONLY_WIFI"
+            android:value="false" />
+        <meta-data
+            android:name="BaiduMobAd_CELL_LOCATION"
+            android:value="true" />
+
+        <!-- boot -->
+        <activity
+            android:name="com.htx.boot.BootActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- main -->
+        <activity
+            android:name="com.htx.main.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.main.MainHomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.main.TabTest"
+            android:screenOrientation="portrait"  >
+	            <intent-filter>
+					<action android:name=""/>
+				</intent-filter>
+        </activity>
+        <activity
+            android:name="com.htx.main.listActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name="com.htx.search.BlogActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name="com.htx.taobao.TaoDazhe"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.taobao.WebActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- shop -->
+        <activity
+            android:name="com.htx.weixin.ShopHome"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.weixin.SearchBrand"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.weixin.SearchGuan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.weixin.SearchShop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.weixin.ShopHomeInfo"
+            android:screenOrientation="portrait"  >
+	            <intent-filter>
+					<action android:name=""/>
+				</intent-filter>
+        </activity>
+        <activity
+            android:name="com.htx.weixin.StoreComment"
+            android:screenOrientation="portrait"  >
+	            <intent-filter>
+					<action android:name=""/>
+				</intent-filter>
+        </activity>
+        <activity
+            android:name="com.htx.weixin.ChatMainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.weixin.shop_toSpeak"
+            android:screenOrientation="portrait"  >
+	            <intent-filter>
+					<action android:name=""/>
+				</intent-filter>
+        </activity>
+        <activity
+            android:name="com.htx.weixin.Uplun"
+            android:screenOrientation="portrait"  >
+	            <intent-filter>
+					<action android:name=""/>
+				</intent-filter>
+        </activity>
+        <!-- search -->
+        <activity
+            android:name="com.htx.search.searchHomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ThemeActivity2"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity
+            android:name="com.htx.search.DetailAuctionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.search.SearchMainActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.search.DetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.search.DetailActivityGroup"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.search.ReceiveActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.search.ShopActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- aa -->
+        <activity
+            android:name="com.aw.aa.WriteRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.aw.aa.ImageFilterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.aw.aa.DeletePhotoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.aw.aa.KaiXin1Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.aw.aa.VoiceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.aw.aa.ImageFilterCropActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.aw.aa.ImageFilterEffectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.aw.aa.ImageFilterFaceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.aw.aa.ImageFilterFrameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.aw.aa.item_info"
+            android:screenOrientation="portrait" />
+
+        <!-- user -->
+        <activity
+            android:name="com.htx.user.U_Login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.user.U_Baoxian"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.user.U_Main"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.user.U_Reg"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.user.U_MissPassword"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name="com.htx.user.U_Register"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.user.U_RegResult"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.user.A_shakeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.user.main_top_bt"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyleTop" />
+        <activity
+            android:name="com.htx.user.main_bottom_bt"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyleTop" />
+        <activity
+            android:name="com.htx.user.show_bottom_bt"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyleTop" />
+        <activity
+            android:name="com.htx.user.shake_show"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyleTop1" />
+        <activity
+            android:name="com.htx.user.about"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.user.QianDao"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.user.U_info"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.user.Aboat_"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.user.User_NewinfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.user.Gonggao"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name="com.htx.user.U_toSpeak"
+            android:screenOrientation="portrait" />
+
+        <!-- contacts -->
+        <activity
+            android:name="com.htx.mysc.MyScActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- app -->
+        <activity
+            android:name="com.htx.app.App_Main"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.app.AppsManage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.app.AppsAdd"
+            android:screenOrientation="portrait" />
+        <!-- pub -->
+        <activity
+            android:name="com.htx.pub.PubActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.pub.CityActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.pub.ShowWebView"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.pub.WebViews"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.pub.PubGroupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.pub.PubUserActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- contacts -->
+        <activity
+            android:name="com.htx.contact.ContactsBackupsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.sms.S_Main"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.sms.ContactsListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.sms.U_Recharge"
+            android:screenOrientation="portrait" />
+        <!-- message -->
+        <activity
+            android:name="com.htx.message.MyMsgDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.message.MyMsgList"
+            android:screenOrientation="portrait" />
+        <!-- ad -->
+        <activity
+            android:name="com.htx.ad.AdBottomMenu"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.ad.MyAdList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.ad.MyAdListDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.ad.MyAdLookList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.anycall.ju.AllAppList"
+            android:screenOrientation="portrait" />
+
+        <!-- 地图 -->
+        <activity
+            android:name="cn.anycall.map.NearbySearchActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.anycall.map.NearbySearchBrand"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.anycall.map.NearbySearchResActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.anycall.map.NearbySearchResListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="cn.anycall.map.BusDaohangActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="cn.anycall.map.BusPlaneSelectionActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="cn.anycall.map.BusRouteDemoActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="com.baidu.mapapi.search.PlaceCaterActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.anycall.map.POINoDetailActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.anycall.map.WalkDaohangActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.anycall.map.WalkingRouteDemoActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.anycall.map.DriveDaohangActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.anycall.map.DriveRouteDemoActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.anycall.map.NaviPortalActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.anycall.map.HtxShopDetailActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.anycall.map.LuActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.anycall.map.InfoViews"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.anycall.map.Info_heyue_Views"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.anycall.map.BNavigatorActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+            
+        <!-- 绑定银行卡 -->
+        <activity
+            android:name="com.htx.bank.InitBankCard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.bank.AddBank"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.bank.BankList"
+            android:screenOrientation="portrait" />
+
+        <!-- 条形码 -->
+        <activity
+            android:name="com.htx.action.BarcodeInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.action.SearchBarcodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.action.ManualInputBarcodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.google.zxing.client.android.HelpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.google.zxing.client.android.PreferencesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.google.zxing.client.android.book.SearchBookContentsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.google.zxing.client.android.share.ShareActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.htx.action.SelectCityActivity"
+            android:screenOrientation="portrait" />
+        
+        
+        <activity
+            android:name="com.maiduo.Activate"
+            android:screenOrientation="portrait" >
+        </activity>
+          <activity
+            android:name="com.example.testviewpagerandtabhost.Home"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.maiduo.Activaye_info"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.maiduo.Category"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.maiduo.LifeMore"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.maiduo.Product"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.maiduo.ProductCategory"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.maiduo.ProductCategory3"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.maiduo.ProductList"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.maiduo.PorductView"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.maiduo.Qiandai"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.maiduo.Search"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.maiduo.SearchList"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.maiduo.ShowMain"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.testviewpagerandtabhost.ShowWebView"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.maiduo.Welcome"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <!-- 我的买多 用户中心 -->
+        <activity
+            android:name="com.user.Login"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.user.Home"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.user.MyAddress"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.user.MyFavorites"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.user.OrderList"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.user.OrderDetail"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.user.UserPay"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.user.ProtocalActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.user.TransactionsRecordActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.user.JifenRecordActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.user.Charge"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 购物车 -->
+        <activity
+            android:name="com.shopping.Address"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.shopping.AddressAdd"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.shopping.AddressEdit"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.shopping.Receive"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.shopping.Cart"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.shopping.Cart_After"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.shopping.SendType"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.shopping.FreightPayType"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.shopping.Other"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.shopping.Submit"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.shopping.PayType"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.shopping.PayTypeBalance"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.shopping.PayTypeArrival"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.shopping.Result"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.shopping.PayTypeBankCardBefore"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.shopping.PayTypeBankCardAfter"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.maiduo.ListViewShowActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.testviewpagerandtabhost.MainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.zijunlin.Zxing.Demo.CaptureActivity"
+            android:clearTaskOnLaunch="true"
+            android:configChanges="orientation|keyboardHidden"
+            android:icon="@drawable/iii"
+            android:label="二维码"
+            android:screenOrientation="portrait"
+            android:stateNotNeeded="true"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            -->
+        </activity>
+
+        <!-- 图形密码 -->
+        <activity
+            android:name="com.way.pattern.UnlockGesturePasswordActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.way.pattern.CreateGesturePasswordActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.way.pattern.GuideGesturePasswordActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- <receiver android:name="com.htx.ad.BootBroadcastReceiver" > -->
+        <!-- <intent-filter android:priority="20" > -->
+
+
+        <!-- 设置该广播接收类的优先级为20，跟主页面的优先级差不多 -->
+        <!-- <action android:name="android.intent.action.BOOT_COMPLETED" /> -->
+        <!-- <action android:name="android.intent.action.PHONE_STATE" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+
+
+        <!-- service -->
+        <service
+            android:name="com.htx.service.UpdateServicez"
+            android:label="UpdateServicez" >
+            <intent-filter>
+                <action android:name="com.htx.service.UpdateServicez.START" />
+                <action android:name="com.htx.service.UpdateServicez.STOP" />
+
+                <category android:name="com.htx.service.UpdateServicez.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:permission="android.permission.BAIDU_LOCATION_SERVICE"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.4" />
+            </intent-filter>
+        </service>
+        <service android:name="com.htx.service.AdService" />
+        <service android:name="com.htx.service.MessageService" />
+<service android:name="com.baidu.navi.location.f" android:enabled="true"/>
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="FWQbpnznxNL5nSi3KxhjFDp1" />
+        <activity
+            android:name="com.hetianxia.activity.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name="cn.anycall.map.DownloadActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name="com.hetianxia.activity.ActivityActivity"
+            android:label="@string/title_activity_activity" >
+        </activity>
+    </application>
+
+</manifest>

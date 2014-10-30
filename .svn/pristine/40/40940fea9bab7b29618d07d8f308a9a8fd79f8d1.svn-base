@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <SurfaceView
+        android:id="@+id/preview_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center" />
+
+    <com.zijunlin.Zxing.Demo.view.ViewfinderView
+        android:id="@+id/viewfinder_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/transparent" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="6"
+            android:background="#9F5D5D5D"
+            android:gravity="center" >
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/scan_info" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip" >
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="5"
+            android:background="#9F5D5D5D"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginTop="18dip"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/msg_default_status"
+                android:textColor="#ffffff" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:id="@+id/shoushu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/main_big_l" />
+
+                <ImageButton
+                    android:id="@+id/shoudiantong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/main_big_btn_bg" />
+
+                <ImageButton
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/main_big_r" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+<!-- 
+    <ProgressBar
+        android:id="@+id/pg_camera_diy"
+        style="@style/CustomProgressStyle"
+        android:layout_width="400px"
+        android:layout_height="400px"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/progressbar" />
+
+    <ImageView
+        android:id="@+id/iv_camera_diy_corner"
+        android:layout_width="431px"
+        android:layout_height="429px"
+        android:layout_gravity="center"
+        android:background="@drawable/bar_code_four_corner" />
+ -->
+</FrameLayout>

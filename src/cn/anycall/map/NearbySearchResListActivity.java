@@ -1,0 +1,370 @@
+package cn.anycall.map;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import com.baidu.mapapi.search.MKAddrInfo;
+import com.baidu.mapapi.search.MKBusLineResult;
+import com.baidu.mapapi.search.MKDrivingRouteResult;
+import com.baidu.mapapi.search.MKPoiResult;
+import com.baidu.mapapi.search.MKSearch;
+import com.baidu.mapapi.search.MKSearchListener;
+import com.baidu.mapapi.search.MKShareUrlResult;
+import com.baidu.mapapi.search.MKSuggestionResult;
+import com.baidu.mapapi.search.MKTransitRouteResult;
+import com.baidu.mapapi.search.MKWalkingRouteResult;
+import com.hetianxia.activity.R;
+import com.htx.action.BMapApiDemoApp;
+import com.htx.action.ProductAction;
+import com.htx.conn.Const;
+import com.htx.core.AsyncWorkHandler;
+import com.htx.pub.LoadingDialog;
+import com.htx.pub.PubActivity;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Message;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Button;
+
+public class NearbySearchResListActivity extends PubActivity {
+
+	private ListView listView;
+	private TextView poisearchcontent;
+	private Button goback;
+	private POISearchAdapter listItemAdapter;
+	private ArrayList<POIResultBean> poiList;
+	private Context _context;
+	private Intent _intent;
+	private View footer;
+	private LayoutInflater inflater;
+	private int curpage = 1;// 当前页
+	private int pages = 1;// 共多少页
+	private Button poiPrepage;
+	private Button poiNextpage;
+	private TextView poiCurpage;
+	private String city,loa;
+	// GPS状态监测
+	private GPSStatusNotify gpsStatusNotify;
+
+	// private TextView poisearch_TextView;
+//	MKSearch mMKSearch;
+	public BMapApiDemoApp app = null;
+
+	public static String  GPSstate = "0";
+	public static String  Yuystate = "0";
+	/** Called when the activity is first created. */
+
+	public void onCreate(Bundle savedInstanceState) {  
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.nearbysearch_reslist);  
+		app = (BMapApiDemoApp) this.getApplication();
+		
+		_context = this;
+		_intent = this.getIntent();
+		city=_intent.getStringExtra("city");
+		loa=_intent.getStringExtra("loa");
+		inflater = LayoutInflater.from(_context);
+		footer = inflater.inflate(R.layout.poisearch_footer, null);
+		listView = (ListView) findViewById(R.id.poisearch_listview);
+		// poisearch_TextView=(TextView)findViewById(R.id.poisearch_TextView);
+		listView.addFooterView(footer);
+		poiPrepage = (Button) findViewById(R.id.poiprepage);
+		poiNextpage = (Button) findViewById(R.id.poinextpage);
+		poiCurpage = (TextView) findViewById(R.id.poicurpage);
+		goback = (Button) findViewById(R.id.poisearch_goback);
+		poisearchcontent = (TextView) findViewById(R.id.poisearch_content);
+		poisearchcontent.setText(_intent.getStringExtra("type"));
+		AsyncWorkHandler asyncQueryHandler = new AsyncWorkHandler() {
+			public Object excute(Map<String, String> params) {
+				return ProductAction.getPOISearchBean(NearbySearchResListActivity.this,params);
+			}
+			public void handleMessage(Message msg) {
+
+				poiList = new ArrayList<POIResultBean>();
+
+				Map<String, String> pars = new HashMap<String, String>();
+				pars.put("lng", _intent.getStringExtra("lng"));
+				pars.put("lat", _intent.getStringExtra("lat"));
+				pars.put("radius", _intent.getStringExtra("range"));
+				HtxShopBean htxshopbean = ProductAction.getHtxShop(pars);
+				int count = 0;
+				if (htxshopbean != null && htxshopbean.getstatus() == 1) {
+					ArrayList<HtxShopDetailBean> htxshoplist = htxshopbean
+							.getresult().getlist();
+
+					if (htxshoplist != null && htxshoplist.size() > 0) {
+						String str;
+						for (HtxShopDetailBean spbean : htxshoplist) {
+							if (count++ < htxshoplist.size()) {
+								POIResultBean tmppoi = new POIResultBean();
+
+								tmppoi.setName(spbean.getShopName());
+								tmppoi.setAddress(spbean.getAddress());
+								tmppoi.setTelephone(spbean.getTel());
+								tmppoi.setUid("####");
+
+								POILocationBean lbean = new POILocationBean();
+								lbean.setLat(Double.parseDouble(spbean
+										.getYPoint()));
+								lbean.setLng(Double.parseDouble(spbean
+										.getXPoint()));
+								tmppoi.setLocation(lbean);
+
+								POIDetailBean dbean = new POIDetailBean();
+								dbean.setType(spbean.getType());
+								dbean.setPrice(spbean.getReferPrice());
+								dbean.setTaste_rating(spbean.getTasteScore());
+								dbean.setOverall_rating(spbean.getTasteScore());
+								dbean.setService_rating(spbean
+										.getServiceScore());
+								dbean.setEnvironment_rating(spbean
+										.getEnvironmentScore());
+								dbean.setImage_num(spbean.getShopPic());
+								dbean.setComment_num(spbean.getSoundFile());
+								dbean.setTag(spbean.getInfo());
+								
+								dbean.setDistance(100);
+								tmppoi.setDetail_info(dbean);
+
+								poiList.add(tmppoi);
+							}
+						}
+					}
+				}
+
+				if (msg.obj != null) {
+					POISearchBean bean = (POISearchBean) msg.obj;
+					if ("ok".equals(bean.getMessage())) {
+
+						curpage = 1;
+						pages = bean.getTotal() / 10;
+						if (bean.getTotal() % 10 != 0)
+							pages++;
+						poiPrepage.setVisibility(View.INVISIBLE);
+						if (curpage >= pages)
+							poiNextpage.setVisibility(View.INVISIBLE);
+						poiCurpage.setText("第" + curpage+"/"+pages + "页");
+
+						int index = 0;
+						while (count++ < 25) {
+							if (index < bean.getResults().size())
+								poiList.add(bean.getResults().get(index++));
+							else
+								break;
+						}
+					}
+				}
+
+				listItemAdapter = new POISearchAdapter(_context, poiList,
+						_intent.getStringExtra("lat"),
+						_intent.getStringExtra("lng"),
+						_intent.getStringExtra("addr"),
+						_intent.getStringExtra("type"), app,city,loa);
+
+				if (listItemAdapter != null) {
+					listView.setAdapter(listItemAdapter);
+				}
+
+//				removeDialog(Const.PROGRESSBAR_WAIT);
+			}
+
+		};
+		// 异步获取信息,实现两个方法excute跟onCompleteWork
+		Map<String, String> params = new HashMap<String, String>();
+//		showDialog(Const.PROGRESSBAR_WAIT);
+		params.put("query", _intent.getStringExtra("type"));
+		params.put("radius", _intent.getStringExtra("range"));
+		params.put(
+				"location",
+				_intent.getStringExtra("lat") + ","
+						+ _intent.getStringExtra("lng"));
+		params.put("page_num", "0");
+		asyncQueryHandler.doWork(params);
+
+
+		goback.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				NearbySearchResListActivity.this.finish();
+			}
+		});
+		poiPrepage.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				// Toast.makeText(_context, "点击上一页",Toast.LENGTH_SHORT).show();
+				AsyncWorkHandler asyncQueryHandler = new AsyncWorkHandler() {
+
+					public Object excute(Map<String, String> params) {
+						return ProductAction.getPOISearchBean(NearbySearchResListActivity.this,params);
+					}
+
+					public void handleMessage(Message msg) {
+
+						if (msg.obj != null) {
+
+							POISearchBean bean = (POISearchBean) msg.obj;
+							if ("ok".equals(bean.getMessage())) {
+
+								curpage -= 1;
+
+								poiNextpage.setVisibility(View.VISIBLE);
+								if (curpage <= 1)
+									poiPrepage.setVisibility(View.INVISIBLE);
+								poiCurpage.setText("第" + curpage+"/"+pages  + "页");
+
+								poiList.clear();
+								poiList = bean.getResults();
+
+								listItemAdapter = new POISearchAdapter(
+										_context, poiList, _intent
+												.getStringExtra("lat"), _intent
+												.getStringExtra("lng"),
+												_intent.getStringExtra("addr"), _intent
+												.getStringExtra("type"), app,city,loa);
+
+								if (listItemAdapter != null) {
+									listView.setAdapter(listItemAdapter);
+								}
+							}
+						}
+
+						removeDialog(Const.PROGRESSBAR_WAIT);
+					}
+
+				};
+				// 异步获取信息,实现两个方法excute跟onCompleteWork
+				Map<String, String> params = new HashMap<String, String>();
+				showDialog(Const.PROGRESSBAR_WAIT);
+				params.put("query", _intent.getStringExtra("type"));
+				params.put("radius", _intent.getStringExtra("range"));
+				params.put("location", _intent.getStringExtra("lat") + ","
+						+ _intent.getStringExtra("lng"));
+				params.put("page_num", (curpage - 2) + "");
+				asyncQueryHandler.doWork(params);
+			}
+		});
+		poiNextpage.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				// Toast.makeText(_context, "点击下一页",Toast.LENGTH_SHORT).show();
+				AsyncWorkHandler asyncQueryHandler = new AsyncWorkHandler() {
+
+					public Object excute(Map<String, String> params) {
+						return ProductAction.getPOISearchBean(NearbySearchResListActivity.this,params);
+					}
+
+					public void handleMessage(Message msg) {
+
+						if (msg.obj != null) {
+
+							POISearchBean bean = (POISearchBean) msg.obj;
+							if ("ok".equals(bean.getMessage())) {
+
+								curpage += 1;
+
+								poiPrepage.setVisibility(View.VISIBLE);
+								if (curpage >= pages)
+									poiNextpage.setVisibility(View.INVISIBLE);
+
+								poiCurpage.setText("第" + curpage+"/"+pages  + "页");
+
+								poiList.clear();
+								poiList = bean.getResults();
+
+								listItemAdapter = new POISearchAdapter(
+										_context, poiList, _intent
+												.getStringExtra("lat"), _intent
+												.getStringExtra("lng"),
+												_intent.getStringExtra("addr"), _intent
+												.getStringExtra("type"), app,city,loa);
+
+								if (listItemAdapter != null) {
+									listView.setAdapter(listItemAdapter);
+								}
+							}
+						}
+
+						removeDialog(Const.PROGRESSBAR_WAIT);
+					}
+
+				};
+				// 异步获取信息,实现两个方法excute跟onCompleteWork
+				Map<String, String> params = new HashMap<String, String>();
+				showDialog(Const.PROGRESSBAR_WAIT);
+				params.put("query", _intent.getStringExtra("type"));
+				params.put("radius", _intent.getStringExtra("range"));
+				params.put("location", _intent.getStringExtra("lat") + ","
+						+ _intent.getStringExtra("lng"));
+				params.put("page_num", curpage + "");
+				asyncQueryHandler.doWork(params);
+			}
+		});
+//
+//		mMKSearch = new MKSearch();
+//		mMKSearch.init(app.mBMapMan, new MKSearchListener() {
+//
+//			public void onGetPoiResult(MKPoiResult result, int type, int iError) {
+//			}
+//			public void onGetAddrResult(MKAddrInfo result, int iError) {
+//			}
+//			public void onGetDrivingRouteResult(MKDrivingRouteResult result,
+//					int iError) {
+//			}
+//			public void onGetTransitRouteResult(MKTransitRouteResult result,
+//					int iError) {
+//			}
+//			public void onGetWalkingRouteResult(MKWalkingRouteResult result,
+//					int iError) {
+//			}
+//			public void onGetBusDetailResult(MKBusLineResult arg0, int arg1) {
+//			}
+//			public void onGetPoiDetailSearchResult(int arg0, int arg1) {
+//			}
+//			public void onGetSuggestionResult(MKSuggestionResult arg0, int arg1) {
+//			}
+//			public void onGetShareUrlResult(MKShareUrlResult arg0, int arg1,
+//					int arg2) {
+//				// TODO Auto-generated method stub
+//				
+//			}
+//		});
+
+		if (gpsStatusNotify == null) {
+			gpsStatusNotify = new GPSStatusNotify();
+		}
+		gpsStatusNotify.checkGPSStatus(this);
+	}
+
+	protected Dialog onCreateDialog(int id) {
+		switch (id) {
+		case Const.PROGRESSBAR_WAIT:
+			LoadingDialog wait_pd = new LoadingDialog(this);
+			// wait_pd.setMessage(Const.SEARCHING);
+			return wait_pd;
+		}
+		return null;
+	}
+
+	@Override
+	public void onResume() {
+
+//		if (gpsStatusNotify == null) {
+//			gpsStatusNotify = new GPSStatusNotify();
+//		}
+//		gpsStatusNotify.checkGPSStatus(this);
+		super.onResume();
+	}
+
+	@Override
+	protected void onDestroy() {
+		
+		super.onDestroy();
+	}
+
+}

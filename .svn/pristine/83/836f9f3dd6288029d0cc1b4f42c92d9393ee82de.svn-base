@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="@drawable/search_title_bg" >
+
+        <TextView
+            android:id="@+id/sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="用户评价"
+            android:textColor="#FFFFFF"
+            android:textSize="18dip" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="60dip"
+            android:layout_height="40dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:background="@drawable/btn"
+            android:text=" 返回 "
+            android:textSize="15sp"
+            android:textColor="#fff" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginBottom="4dip"
+        android:layout_marginTop="13dip"
+        android:hint="亲,请输入您要评价的信息"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="top" >
+    </EditText>
+    
+<!--     <EditText -->
+<!--         android:id="@+id/editText2" -->
+<!--         android:layout_width="fill_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_marginLeft="10dip" -->
+<!--         android:layout_marginRight="10dip" -->
+<!--         android:layout_marginBottom="6dip" -->
+<!--         android:hint="联系方式(手机号、QQ)" -->
+<!--         android:ems="10" -->
+<!--         android:singleLine="true" -->
+<!--         android:gravity="top" > -->
+<!--     </EditText> -->
+
+    <!-- *********************************************************************** -->
+
+    <Button
+        android:id="@+id/bbt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/btn_style_red"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="提交信息"
+        android:textColor="#fff"
+        android:textSize="18sp" />
+
+</LinearLayout>
